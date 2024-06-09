@@ -39,7 +39,7 @@ const useUsers = create<UsersState>(
             set((state) => {
                 let newUserPage;
 
-                if (params.page == 1) {
+                if (params.page === 1) {
                     newUserPage = res
                 } else {
                     newUserPage = { ...res, users: [...state.usersPage.users, ...res.users] }
