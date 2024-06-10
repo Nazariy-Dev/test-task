@@ -19,10 +19,13 @@ const TextLine = styled.div`
   text-overflow: ellipsis;
   text-align: center;
 `
-const Cntent = styled.div`
+const Content = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+`
+const StyledText = styled(Text)`
   width: 100%;
 `
 interface UserCardProps {
@@ -36,13 +39,21 @@ function UserCard(props: UserCardProps) {
     <Card>
       <img width={"70px"} height={"70px"} style={{ borderRadius: "50%" }} src={user.photo} alt={user.name} />
 
-      <TextLine><Text>{user.name}</Text></TextLine>
+      <StyledText >
+        <TextLine>{user.name}</TextLine>
+      </StyledText>
 
-      <Cntent>
-        <TextLine><Text>{user.position}</Text></TextLine>
-        <TextLine><Text>{user.email}</Text></TextLine>
-        <TextLine><Text>{user.phone}</Text></TextLine>
-      </Cntent>
+      <Content>
+        <StyledText >
+          <TextLine>{user.position}</TextLine>
+        </StyledText>
+        <StyledText >
+          <TextLine>{user.email}</TextLine>
+        </StyledText>
+        <StyledText >
+          <TextLine>{user.phone}</TextLine>
+        </StyledText>
+      </Content>
     </Card >
 
   )

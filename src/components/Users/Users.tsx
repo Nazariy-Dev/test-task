@@ -51,7 +51,7 @@ export default function Users() {
             <UsersList >
                 <Heading>Working with GET request</Heading>
                 <Cards>
-                    {!usersPage.success && <ErrorMessage />}
+                    {!usersPage.success && usersPage.users.length >0 && <ErrorMessage />}
                     {usersPage.users.map((user) => (
                         <UserCard key={user.id} user={user} />
                     ))}
