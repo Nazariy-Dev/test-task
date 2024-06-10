@@ -289,7 +289,7 @@ export default function Form() {
                         {errors.photo && <div className='error-message'>{errors.photo.message?.toString()}</div>}
                     </InputFile>
 
-                    <Button isValid={!isValid} type={"submit"} value={"Sign up"} style={{ margin: "0 auto" }} />
+                    <Button isValid={isSubmitting} type={"submit"} value={"Sign up"} style={{ margin: "0 auto" }} />
                 </StyledForm>
             }
         </Section>
